@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <title>画像形式変換ツール</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+</head>
+<body>
+    <h1>画像形式変換ツール</h1>
+    <div class="container">
+        <div class="input-section">
+            <label for="inputFiles">画像ファイルやZIPファイルを選択（PNG/JPEG/WebP、ZIP）:</label><br>
+            <input type="file" id="inputFiles" multiple />
+        </div>
+
+        <div class="format-section">
+            <h2>変換形式設定</h2>
+            <div class="select-group">
+                <label for="fromFormat">変換前拡張子:</label><br>
+                <select id="fromFormat" disabled>
+                    <option value="png">PNG</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="webp">WebP</option>
+                    <option value="mixed">複数フォーマット</option>
+                </select>
+            </div>
+            <div class="select-group">
+                <label for="toFormat">変換後拡張子:</label><br>
+                <select id="toFormat">
+                    <option value="png">PNG</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="webp">WebP</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="action-section">
+            <button id="convertBtn" disabled>一括変換</button>
+            <button id="downloadAllBtn" disabled>一括ダウンロード(ZIP)</button>
+        </div>
+
+        <div class="result-section">
+            <h2>出力結果:</h2>
+            <div id="outputContainer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
